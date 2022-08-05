@@ -6,28 +6,30 @@ The required dependencies for the analysis procedures are PyMOL, matplotlib, num
 ```python
 # if you have conda environment
 conda create -n A501_3DAC python=3.8
-conda install pymol matplotlib numpy pandas seaborn biopython
+conda install pymol matplotlib numpy pandas seaborn biopython scipy
 ```
 You might also need jupyter notebook to run notebook files.
 
 ## 1 ParaFold
 
-We used a parallelized version of AlphaFold which called ParaFold for high-throughput structure prediction. The installation and usage of ParaFold is available from [ParaFold](https://github.com/Zuricho/ParallelFold).
+We used a parallelized version of AlphaFold which called ParaFold for high-throughput structure prediction. The installation and usage of ParaFold is available from [ParaFold](https://github.com/Zuricho/ParallelFold). Here we provide scripts for submitting multiple structure prediction jobs using ParaFold.
 
-Here we provide scripts for submitting multiple structure prediction jobs using ParaFold.
+## 2 Result analysis
 
-## 2 Structure analysis
+We used our python scripts (in jupyter notebook format) to do structural analysis (hydrogen bond, salt bridge, disulfur bind, secondary structure, SASA, etc.). In this repo, we provided a demo to run the notebook using 20 example AlphaFold structure.
 
-We used our python scripts to do structural analysis (hydrogen bond, salt bridge, disulfur bind, secondary structure, SASA, etc.)
+Detail guide can be found in notebook.
 
-## RMSD calculation
-
-We wrote scripts to calculate RMSD between all predicted structures from 7 enzymes in 24 species. The python scripts is located in ./3_rmsd_calculation
-
-## Structure sequence alignment
+## 3 Structure sequence alignment
 
 We conduct structure and sequence alignment for all predicted structures from 7 enzymes in 24 species. 
 
-## Proteome-wide analysis
+First, you should download the prediction results from https://zenodo.org/record/6387901#.Yu15YHYzaUk
 
-The data and analysis code is in ./5_proteome_wide_analysis
+Then, the jupyter notebook `3_structure_sequence_alignment/result_analysis.ipynb` will help you calculate the sequence identity and structure RMSD, results saved in `./3_structure_sequence_alignment/result` folder
+
+Finally `3_structure_sequence_alignment/figure.ipynb` is used for plot figures in our context.
+
+## 4 Proteome-wide analysis
+
+The proteome-wide structural feature data in csv format and analysis code is in `./4_proteome_wide_analysis`
