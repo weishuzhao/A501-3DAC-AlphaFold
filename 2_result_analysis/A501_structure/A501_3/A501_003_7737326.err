@@ -1,0 +1,85 @@
+/lustre/home/acct-stu/stu/.conda/envs/alphafold_cuda10/lib/python3.8/site-packages/absl/flags/_validators.py:203: UserWarning: Flag --preset has a non-None default value; therefore, mark_flag_as_required will pass even if flag is not specified in the command line!
+  warnings.warn(
+I0809 17:55:02.914868 47602205485184 templates.py:837] Using precomputed obsolete pdbs /lustre/home/acct-stu/stu/parallelfold/data/pdb_mmcif/obsolete.dat.
+I0809 17:55:03.259416 47602205485184 tpu_client.py:54] Starting the local TPU driver.
+I0809 17:55:03.303982 47602205485184 xla_bridge.py:212] Unable to initialize backend 'tpu_driver': Not found: Unable to find driver in registry given worker: local://
+2021-08-09 17:55:03.309995: W external/org_tensorflow/tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /lustre/opt/cascadelake/linux-centos7-x86_64/gcc-4.8.5/miniconda3-4.8.2-5yczksexambgeule63z3smwiwrbokjtu/lib:/lustre/opt/cascadelake/linux-centos7-skylake_avx512/gcc-8.3.0/cuda-10.1.243-qpdenfas4hrrpamgmlrkdi4gjdyk454j/lib64
+2021-08-09 17:55:03.310862: W external/org_tensorflow/tensorflow/stream_executor/cuda/cuda_driver.cc:269] failed call to cuInit: UNKNOWN ERROR (303)
+I0809 17:55:03.312126 47602205485184 xla_bridge.py:212] Unable to initialize backend 'gpu': Failed precondition: No visible GPU devices.
+I0809 17:55:03.312494 47602205485184 xla_bridge.py:212] Unable to initialize backend 'tpu': Invalid argument: TpuPlatform is not available.
+W0809 17:55:03.312704 47602205485184 xla_bridge.py:215] No GPU/TPU found, falling back to CPU. (Set TF_CPP_MIN_LOG_LEVEL=0 and rerun for more info.)
+I0809 17:55:03.928635 47602205485184 run_feature.py:262] Have 1 models: ['model_1']
+I0809 17:55:03.928894 47602205485184 run_feature.py:275] Using random seed 3436793624573461260 for the data pipeline
+I0809 17:55:03.946382 47602205485184 jackhmmer.py:132] Launching subprocess "/lustre/home/acct-stu/stu/.conda/envs/alphafold_cuda10/bin/jackhmmer -o /dev/null -A /tmp/tmp6xgaf8_0/output.sto --noali --F1 0.0005 --F2 5e-05 --F3 5e-07 --incE 0.0001 -E 0.0001 --cpu 8 -N 1 A501_seq/A501_003.fasta /lustre/home/acct-stu/stu/parallelfold/data/uniref90/uniref90.fasta"
+I0809 17:55:04.006249 47602205485184 utils.py:36] Started Jackhmmer (uniref90.fasta) query
+I0809 18:01:41.443564 47602205485184 utils.py:40] Finished Jackhmmer (uniref90.fasta) query in 397.437 seconds
+I0809 18:01:41.454707 47602205485184 jackhmmer.py:132] Launching subprocess "/lustre/home/acct-stu/stu/.conda/envs/alphafold_cuda10/bin/jackhmmer -o /dev/null -A /tmp/tmp6hyt03kr/output.sto --noali --F1 0.0005 --F2 5e-05 --F3 5e-07 --incE 0.0001 -E 0.0001 --cpu 8 -N 1 A501_seq/A501_003.fasta /lustre/home/acct-stu/stu/parallelfold/data/mgnify/mgy_clusters.fa"
+I0809 18:01:41.471513 47602205485184 utils.py:36] Started Jackhmmer (mgy_clusters.fa) query
+I0809 18:09:09.843573 47602205485184 utils.py:40] Finished Jackhmmer (mgy_clusters.fa) query in 448.372 seconds
+I0809 18:09:10.006963 47602205485184 hhsearch.py:76] Launching subprocess "/lustre/home/acct-stu/stu/.conda/envs/alphafold_cuda10/bin/hhsearch -i /tmp/tmp1w5laofx/query.a3m -o /tmp/tmp1w5laofx/output.hhr -maxseq 1000000 -d /lustre/home/acct-stu/stu/parallelfold/data/pdb70/pdb70"
+I0809 18:09:10.306384 47602205485184 utils.py:36] Started HHsearch query
+I0809 18:10:16.896629 47602205485184 utils.py:40] Finished HHsearch query in 66.590 seconds
+I0809 18:10:17.329913 47602205485184 hhblits.py:130] Launching subprocess "/lustre/home/acct-stu/stu/.conda/envs/alphafold_cuda10/bin/hhblits -i A501_seq/A501_003.fasta -cpu 4 -oa3m /tmp/tmp033mt3z8/output.a3m -o /dev/null -n 3 -e 0.001 -maxseq 1000000 -realign_max 100000 -maxfilt 100000 -min_prefilter_hits 1000 -d /lustre/home/acct-stu/stu/parallelfold/data/bfd/bfd_metaclust_clu_complete_id30_c90_final_seq.sorted_opt -d /lustre/home/acct-stu/stu/parallelfold/data/uniclust30/uniclust30_2018_08/uniclust30_2018_08"
+I0809 18:10:17.456944 47602205485184 utils.py:36] Started HHblits query
+I0809 18:37:05.706215 47602205485184 utils.py:40] Finished HHblits query in 1608.231 seconds
+I0809 18:37:05.847708 47602205485184 templates.py:849] Searching for template for: None
+W0809 18:37:05.911267 47602205485184 templates.py:132] Template structure not in release dates dict: 2bj7
+I0809 18:37:05.913168 47602205485184 templates.py:716] Reading PDB entry from /lustre/home/acct-stu/stu/parallelfold/data/pdb_mmcif/mmcif_files/2bj7.cif. Query: MKVVRFGVSVPEELLEKFDRIIEEKGYVNRSEAIRDLMRDFIIRHEWETGDAEVAGTITMLYNHDEADVVKELLDLQHDYLDEIVSSIHVHMDEHNCLEVVIVKGKASRIKEIADRLLSLKGVKHGKLVMTGTGKELV, template: MELIRFSISIPSKLLEKFDQIIEEIGYENRSEAIRDLIRDFIIRHEWEVGNEEVAGTITIVYNHDEGDVVKALLDLQHEYLDEIISSLHVHMDEHNCLEVIVVKGEAKKIKMIADKLLSLKGVKHGKLVMTSTGKELV
+I0809 18:37:06.129089 47602205485184 templates.py:271] Found an exact template match 2bj7_B.
+W0809 18:37:06.186410 47602205485184 templates.py:132] Template structure not in release dates dict: 2bj9
+I0809 18:37:06.186945 47602205485184 templates.py:716] Reading PDB entry from /lustre/home/acct-stu/stu/parallelfold/data/pdb_mmcif/mmcif_files/2bj9.cif. Query: MKVVRFGVSVPEELLEKFDRIIEEKGYVNRSEAIRDLMRDFIIRHEWETGDAEVAGTITMLYNHDEADVVKELLDLQHDYLDEIVSSIHVHMDEHNCLEVVIVKGKASRIKEIADRLLSLKGVKHGKLVMTGTGKELV, template: MELIRFSISIPSKLLEKFDQIIEEIGYENRSEAIRDLIRDFIIRHEWEVGNEEVAGTITIVYNHDEGDVVKALLDLQHEYLDEIISSLHVHMDEHNCLEVIVVKGEAKKIKMIADKLLSLKGVKHGKLVMTSTGKELV
+I0809 18:37:06.299412 47602205485184 templates.py:271] Found an exact template match 2bj9_B.
+W0809 18:37:06.304535 47602205485184 templates.py:132] Template structure not in release dates dict: 2wvf
+I0809 18:37:06.304713 47602205485184 templates.py:716] Reading PDB entry from /lustre/home/acct-stu/stu/parallelfold/data/pdb_mmcif/mmcif_files/2wvf.cif. Query: MKVVRFGVSVPEELLEKFDRIIEEKGYVNRSEAIRDLMRDFIIRHEWETGDAEVAGTITMLYNHDEADVVKELLDLQHDYLDEIVSSIHVHMDEHNCLEVVIVKGKASRIKEIADRLLSLKGVKHGKLVMTGTGKELV, template: SIIRFSVSLQQNLLDELDNRIIKNGYSSRSELVRDMIREKLVEDNWAEDNPNDESKIAVLVVIYDGGQRELNQRMIDIQHASGTHVLCTTHIHMDEHNCLETIILQGNSFEIQRLQLEIGGLRGVKFAKLTKASSFE
+I0809 18:37:06.465800 47602205485184 templates.py:271] Found an exact template match 2wvf_B.
+W0809 18:37:06.475878 47602205485184 templates.py:132] Template structure not in release dates dict: 6mrj
+I0809 18:37:06.476071 47602205485184 templates.py:716] Reading PDB entry from /lustre/home/acct-stu/stu/parallelfold/data/pdb_mmcif/mmcif_files/6mrj.cif. Query: MKVVRFGVSVPEELLEKFDRIIEEKGYVNRSEAIRDLMRDFIIRHEWETGDAEVAGTITMLYNHDEADVVKELLDLQHDYLDEIVSSIHVHMDEHNCLEVVIVKGKASRIKEIADRLLSLKGVKHGKLVMTGTGKELV, template: SIIRFSVSLQQNLLDELDNRIIKNGYSSRSELVRDMIREKLVEDNWAEDNPNDESKIAVLVVIYDHHQRELNQRMIDIQHASGTHVLCTTHIHMDEHNCLETIILQGNSFEIQRLQLEIGGLRGVKFAKLTKASSFE
+I0809 18:37:08.798646 47602205485184 templates.py:271] Found an exact template match 6mrj_C.
+W0809 18:37:08.805929 47602205485184 templates.py:132] Template structure not in release dates dict: 2hza
+I0809 18:37:08.806140 47602205485184 templates.py:716] Reading PDB entry from /lustre/home/acct-stu/stu/parallelfold/data/pdb_mmcif/mmcif_files/2hza.cif. Query: MKVVRFGVSVPEELLEKFDRIIEEKGYVNRSEAIRDLMRDFIIRHEWETGDAEVAGTITMLYNHDEADVVKELLDLQHDYLDEIVSSIHVHMDEHNCLEVVIVKGKASRIKEIADRLLSLKGVKHGKLVMTGTGKELV, template: MQRVTITLDDDLLETLDSLSQRRGYNNRSEAIRDILRSALAQEATQQHGTQGFAVLSYVYEHEKRDLASRIVSTQHHHHDLSVATLHVHINHDDCLEIAVLKGDMGDVQHFADDVIAQRGVRHGHLQCLPKE
+I0809 18:37:08.895900 47602205485184 templates.py:271] Found an exact template match 2hza_A.
+W0809 18:37:08.901106 47602205485184 templates.py:132] Template structure not in release dates dict: 2hzv
+I0809 18:37:08.901288 47602205485184 templates.py:716] Reading PDB entry from /lustre/home/acct-stu/stu/parallelfold/data/pdb_mmcif/mmcif_files/2hzv.cif. Query: MKVVRFGVSVPEELLEKFDRIIEEKGYVNRSEAIRDLMRDFIIRHEWETGDAEVAGTITMLYNHDEADVVKELLDLQHDYLDEIVSSIHVHMDEHNCLEVVIVKGKASRIKEIADRLLSLKGVKHGKLVMTGTGKELV, template: MQRVTITLDDDLLETLDSLSQRRGYNNRSEAIRDILRSALAQEATQQHGTQGFAVLSYVYEHEKRDLASRIVSTQHHHHDLSVATLHVHINHDDCLEIAVLKGDMGDVQHFADDVIAQRGVRHGHLQCLPKE
+I0809 18:37:09.351484 47602205485184 templates.py:271] Found an exact template match 2hzv_F.
+W0809 18:37:09.359370 47602205485184 templates.py:132] Template structure not in release dates dict: 2y3y
+I0809 18:37:09.359590 47602205485184 templates.py:716] Reading PDB entry from /lustre/home/acct-stu/stu/parallelfold/data/pdb_mmcif/mmcif_files/2y3y.cif. Query: MKVVRFGVSVPEELLEKFDRIIEEKGYVNRSEAIRDLMRDFIIRHEWETGDAEVAGTITMLYNHDEADVVKELLDLQHDYLDEIVSSIHVHMDEHNCLEVVIVKGKASRIKEIADRLLSLKGVKHGKLVMTGTGKELV, template: NDESKIAVLVVIYDHHQRELNQRMIDIQHASGTHVLCTTHIHMDEHNCLETIILQGNSFEIQRLQLEIGGLRGVKFAKLTKASSFEHN
+I0809 18:37:09.482975 47602205485184 templates.py:271] Found an exact template match 2y3y_A.
+W0809 18:37:09.487012 47602205485184 templates.py:132] Template structure not in release dates dict: 1q5y
+I0809 18:37:09.487180 47602205485184 templates.py:716] Reading PDB entry from /lustre/home/acct-stu/stu/parallelfold/data/pdb_mmcif/mmcif_files/1q5y.cif. Query: MKVVRFGVSVPEELLEKFDRIIEEKGYVNRSEAIRDLMRDFIIRHEWETGDAEVAGTITMLYNHDEADVVKELLDLQHDYLDEIVSSIHVHMDEHNCLEVVIVKGKASRIKEIADRLLSLKGVKHGKLVMTGTGKELV, template: TQGFAVLSYVYEHEKRDLASRIVSTQHHHHDLSVATLHVHINHDDCLEIAVLKGDMGDVQHFADDVIAQRGVRHGHLQCLPKE
+I0809 18:37:09.784963 47602205485184 templates.py:271] Found an exact template match 1q5y_A.
+W0809 18:37:09.790026 47602205485184 templates.py:132] Template structure not in release dates dict: 3qsi
+I0809 18:37:09.790233 47602205485184 templates.py:716] Reading PDB entry from /lustre/home/acct-stu/stu/parallelfold/data/pdb_mmcif/mmcif_files/3qsi.cif. Query: MKVVRFGVSVPEELLEKFDRIIEEKGYVNRSEAIRDLMRDFIIRHEWETGDAEVAGTITMLYNHDEADVVKELLDLQHDYLDEIVSSIHVHMDEHNCLEVVIVKGKASRIKEIADRLLSLKGVKHGKLVMTGTGKELV, template: ESKIAVLVVIYDHHQRELNQRMIDIQHASGTHVLCTTHIHMDEHNCLETIILQGNSFEIQRLQLEIGGLRGVKFAKLTKASSFEYN
+I0809 18:37:10.203298 47602205485184 templates.py:271] Found an exact template match 3qsi_E.
+W0809 18:37:10.210875 47602205485184 templates.py:132] Template structure not in release dates dict: 2nzc
+I0809 18:37:10.211069 47602205485184 templates.py:716] Reading PDB entry from /lustre/home/acct-stu/stu/parallelfold/data/pdb_mmcif/mmcif_files/2nzc.cif. Query: MKVVRFGVSVPEELLEKFDRIIEEKGYVNRSEAIRDLMRDFIIRHEWETGDAEVAGTITMLYNHDEADVVKELLDLQHDYLDEIVSSIHVHMDEHNCLEVVIVKGKASRIKEIADRLLSLKGVKHGKLVMTGTGKELV, template: RFYILTIVVEDREKAYRQVNELLHNFSEDILLRVGYPVREENMAIIFLVLKTDNDTIGALSGKLGQISGVRVKTVPLK
+I0809 18:37:10.337432 47602205485184 templates.py:271] Found an exact template match 2nzc_A.
+W0809 18:37:10.341042 47602205485184 templates.py:132] Template structure not in release dates dict: 2nzc
+I0809 18:37:10.341201 47602205485184 templates.py:716] Reading PDB entry from /lustre/home/acct-stu/stu/parallelfold/data/pdb_mmcif/mmcif_files/2nzc.cif. Query: MKVVRFGVSVPEELLEKFDRIIEEKGYVNRSEAIRDLMRDFIIRHEWETGDAEVAGTITMLYNHDEADVVKELLDLQHDYLDEIVSSIHVHMDEHNCLEVVIVKGKASRIKEIADRLLSLKGVKHGKLVMTGTGKELV, template: RFYILTIVVEDREKAYRQVNELLHNFSEDILLRVGYPVREENMAIIFLVLKTDNDTIGALSGKLGQISGVRVKTVPLKR
+I0809 18:37:10.461388 47602205485184 templates.py:271] Found an exact template match 2nzc_D.
+W0809 18:37:10.465284 47602205485184 templates.py:132] Template structure not in release dates dict: 1yba
+I0809 18:37:10.465442 47602205485184 templates.py:716] Reading PDB entry from /lustre/home/acct-stu/stu/parallelfold/data/pdb_mmcif/mmcif_files/1yba.cif. Query: MKVVRFGVSVPEELLEKFDRIIEEKGYVNRSEAIRDLMRDFIIRHEWETGDAEVAGTITMLYNHDEADVVKELLDLQHDYLDEIVSSIHVHMDEHNCLEVVIVKGKASRIKEIADRLLSLKGVKHGKLVMTGTGKELV, template: RRLMHIHENRPGVLTALNKIFAEQGVNIAAQYLQTSAQMGYVVIDIEADEDVAEKALQAMKAIPGTIRARLL
+I0809 18:37:11.241560 47602205485184 templates.py:271] Found an exact template match 1yba_A.
+W0809 18:37:11.258626 47602205485184 templates.py:132] Template structure not in release dates dict: 2fgc
+I0809 18:37:11.258827 47602205485184 templates.py:716] Reading PDB entry from /lustre/home/acct-stu/stu/parallelfold/data/pdb_mmcif/mmcif_files/2fgc.cif. Query: MKVVRFGVSVPEELLEKFDRIIEEKGYVNRSEAIRDLMRDFIIRHEWETGDAEVAGTITMLYNHDEADVVKELLDLQHDYLDEIVSSIHVHMDEHNCLEVVIVKGKASRIKEIADRLLSLKGVKHGKLVMTGTGKELV, template: NKPGVMRKVANLFARRGFNISSITVGESETPGLSRLVIMVKGDDKTIEQIEKQAYKLVEVVKVTPID
+I0809 18:37:11.321002 47602205485184 templates.py:271] Found an exact template match 2fgc_A.
+W0809 18:37:11.326341 47602205485184 templates.py:132] Template structure not in release dates dict: 2f1f
+I0809 18:37:11.326498 47602205485184 templates.py:716] Reading PDB entry from /lustre/home/acct-stu/stu/parallelfold/data/pdb_mmcif/mmcif_files/2f1f.cif. Query: MKVVRFGVSVPEELLEKFDRIIEEKGYVNRSEAIRDLMRDFIIRHEWETGDAEVAGTITMLYNHDEADVVKELLDLQHDYLDEIVSSIHVHMDEHNCLEVVIVKGKASRIKEIADRLLSLKGVKHGKLVMTGTGKELV, template: ESGALSRVIGLFSQRGYNIESLTVAPTDDPTLSRMTIQTVGDEKVLEQIEKQLHKLVDVLRVSEL
+I0809 18:37:11.524208 47602205485184 templates.py:271] Found an exact template match 2f1f_A.
+W0809 18:37:11.531062 47602205485184 templates.py:132] Template structure not in release dates dict: 2pc6
+I0809 18:37:11.531235 47602205485184 templates.py:716] Reading PDB entry from /lustre/home/acct-stu/stu/parallelfold/data/pdb_mmcif/mmcif_files/2pc6.cif. Query: MKVVRFGVSVPEELLEKFDRIIEEKGYVNRSEAIRDLMRDFIIRHEWETGDAEVAGTITMLYNHDEADVVKELLDLQHDYLDEIVSSIHVHMDEHNCLEVVIVKGKASRIKEIADRLLSLKGVKHGKLVMTGTGKELV, template: EAGALSRVAGLFSARGYNIESLSVAPTEDPTLSRMTLVTNGPDEIVEQITKQLNKLIEVVKLIDL
+I0809 18:37:11.749937 47602205485184 templates.py:271] Found an exact template match 2pc6_A.
+W0809 18:37:11.756730 47602205485184 templates.py:132] Template structure not in release dates dict: 2pc6
+I0809 18:37:11.756888 47602205485184 templates.py:716] Reading PDB entry from /lustre/home/acct-stu/stu/parallelfold/data/pdb_mmcif/mmcif_files/2pc6.cif. Query: MKVVRFGVSVPEELLEKFDRIIEEKGYVNRSEAIRDLMRDFIIRHEWETGDAEVAGTITMLYNHDEADVVKELLDLQHDYLDEIVSSIHVHMDEHNCLEVVIVKGKASRIKEIADRLLSLKGVKHGKLVMTGTGKELV, template: EAGALSRVAGLFSARGYNIESLSVAPTEDPTLSRMTLVTNGPDEIVEQITKQLNKLIEVVKLIDL
+I0809 18:37:11.976352 47602205485184 templates.py:271] Found an exact template match 2pc6_B.
+W0809 18:37:11.983084 47602205485184 templates.py:132] Template structure not in release dates dict: 1nla
+I0809 18:37:11.983254 47602205485184 templates.py:716] Reading PDB entry from /lustre/home/acct-stu/stu/parallelfold/data/pdb_mmcif/mmcif_files/1nla.cif. Query: MKVVRFGVSVPEELLEKFDRIIEEKGYVNRSEAIRDLMRDFIIRHEWETGDAEVAGTITMLYNHDEADVVKELLDLQHDYLDEIVSSIHVHMDEHNCLEVVIVKGKASRIKEIADRLLSLKGVKHGKLVMTGTGKELV, template: KMPQFLNRWPREVLDLVRKVAEENGRSVNSEIYQRVMESFKKEGRIG
+I0809 18:37:13.016091 47602205485184 templates.py:271] Found an exact template match 1nla_A.
+W0809 18:37:13.026714 47602205485184 templates.py:132] Template structure not in release dates dict: 6iya
+I0809 18:37:13.026924 47602205485184 templates.py:716] Reading PDB entry from /lustre/home/acct-stu/stu/parallelfold/data/pdb_mmcif/mmcif_files/6iya.cif. Query: MKVVRFGVSVPEELLEKFDRIIEEKGYVNRSEAIRDLMRDFIIRHEWETGDAEVAGTITMLYNHDEADVVKELLDLQHDYLDEIVSSIHVHMDEHNCLEVVIVKGKASRIKEIADRLLSLKGVKHGKLVMTGTGKELV, template: STIKPVSVKLDADIKARVEHLAETRKRSSHWMMREAIREYVEREEKRE
+I0809 18:37:13.203104 47602205485184 templates.py:271] Found an exact template match 6iya_E.
+W0809 18:37:13.206947 47602205485184 templates.py:132] Template structure not in release dates dict: 6iya
+I0809 18:37:13.207104 47602205485184 templates.py:716] Reading PDB entry from /lustre/home/acct-stu/stu/parallelfold/data/pdb_mmcif/mmcif_files/6iya.cif. Query: MKVVRFGVSVPEELLEKFDRIIEEKGYVNRSEAIRDLMRDFIIRHEWETGDAEVAGTITMLYNHDEADVVKELLDLQHDYLDEIVSSIHVHMDEHNCLEVVIVKGKASRIKEIADRLLSLKGVKHGKLVMTGTGKELV, template: STIKPVSVKLDADIKARVEHLAETRKRSSHWMMREAIREYVEREEKRE
+I0809 18:37:13.380790 47602205485184 templates.py:271] Found an exact template match 6iya_F.
+W0809 18:37:13.385152 47602205485184 templates.py:132] Template structure not in release dates dict: 4hv0
+I0809 18:37:13.385318 47602205485184 templates.py:716] Reading PDB entry from /lustre/home/acct-stu/stu/parallelfold/data/pdb_mmcif/mmcif_files/4hv0.cif. Query: MKVVRFGVSVPEELLEKFDRIIEEKGYVNRSEAIRDLMRDFIIRHEWETGDAEVAGTITMLYNHDEADVVKELLDLQHDYLDEIVSSIHVHMDEHNCLEVVIVKGKASRIKEIADRLLSLKGVKHGKLVMTGTGKELV, template: MMVTVEEEVYEFLKKKAKEEGTSVPAVIRKILKEYFGIEDRTRDYKRQDLEGSYIIV
+I0809 18:37:13.521859 47602205485184 templates.py:271] Found an exact template match 4hv0_D.
