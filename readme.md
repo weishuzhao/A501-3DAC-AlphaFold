@@ -33,3 +33,7 @@ Finally `3_structure_sequence_alignment/figure.ipynb` is used for plot figures i
 ## 4 Proteome-wide analysis
 
 The proteome-wide structural feature data in csv format and analysis code is in `./4_proteome_wide_analysis`
+
+## 5 Figure Scripts
+
+Scripts for figures in main text and supplementary file is available at `./5_figures`
